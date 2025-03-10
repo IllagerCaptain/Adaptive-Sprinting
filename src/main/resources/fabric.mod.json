@@ -1,0 +1,38 @@
+{
+	"schemaVersion": 1,
+	"id": "adaptivesprinting",
+	"version": "${version}",
+	"name": "Adaptive Sprinting",
+	"description": "Per-game toggle sprint for the Hypixel network.",
+	"authors": [
+		"IllagerCaptain"
+	],
+	"contact": {
+		"sources": "https://github.com/IllagerCaptain/Adaptive-Sprinting"
+	},
+	"license": "MIT",
+	"icon": "assets/adaptivesprinting/icon.png",
+	"environment": "client",
+	"entrypoints": {
+		"client": [
+			"com.adaptivesprinting.AdaptiveSprinting"
+		]
+	},
+	"mixins": [
+		"adaptivesprinting.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.10",
+		"minecraft": ">=1.21.4",
+		"java": ">=21",
+		"hypixel-mod-api": ">=${api_version}"
+	},
+	"suggests": {
+		"modmenu": "*"
+	},
+	"custom": {
+		"modmenu": {
+			"update_checker": true
+		}
+	}
+}
