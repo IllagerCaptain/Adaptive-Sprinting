@@ -19,17 +19,19 @@ public class AdaptiveSprinting implements ClientModInitializer {
 	public void onInitializeClient() {
 		HypixelModAPI.getInstance().subscribeToEventPacket(ClientboundLocationPacket.class);
 		HypixelModAPI.getInstance().createHandler(ClientboundLocationPacket.class, packet -> {
-            LOGGER.info("Current ServerType: {}", packet.getServerType().get().getName());
+            LOGGER.debug("Current ServerType: {}", packet.getServerType().get().getName());
 			if (packet.getServerType().isEmpty()) { // this basically will only happen if we're not on hypixel
 				shouldAlwaysSprint = false;
 			} else {
 				switch (packet.getServerType().get().getName()) {
-					case "WALLS":          // The Walls
-					case "SURVIVAL_GAMES": // Blitz Survival Games
-					case "WALLS3":     // Mega Walls
-					case "UHC":            // UHC Champions
-					case "HOUSING":            // Housing
-					case "SMP":            // SMP.. duh
+					case "Walls":
+					case "Blitz Survival Games":
+					case "Mega Walls":
+					case "UHC Champions":
+					case "Housing":
+					case "Crazy Walls":
+					case "Speed UHC":
+					case "SMP":
 						shouldAlwaysSprint = false;
 						break;
 					default:
