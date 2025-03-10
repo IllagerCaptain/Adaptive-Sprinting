@@ -35,7 +35,6 @@ public abstract class ClientPlayerEntityMixin extends AbstractClientPlayerEntity
 				&& (
 						AdaptiveSprinting.shouldAlwaysSprint()
 						|| this.isRidingCamel() // No hunger consumption on camel, so might as well
-						|| this.client.getCameraEntity().isInvulnerable() // If we're invulnerable we can't starve either
 				)
 						&& !this.shouldStopSprinting() // If you can't sprint in the first place, then don't because that would be cheating
 		) {
