@@ -35,9 +35,6 @@ public abstract class ClientPlayerEntityMixin extends AbstractClientPlayerEntity
 
 	@Inject(method = "tickMovement", at = @At("TAIL"))
 	private void modifySprinting(CallbackInfo ci) {
-		while (this.client.options.forwardKey.isPressed() && this.client.getCameraEntity() != null) {
-			LOGGER.info("Is player invulnerable: " + this.client.getCameraEntity().isInvulnerable());
-		}
 		if (
 				(this.client.getCameraEntity() != null) // We need the entity to make sprint to actually exist
 				&& this.client.getCameraEntity().isControlledByPlayer() // We also need to be able to control the entity to make said entity sprint
